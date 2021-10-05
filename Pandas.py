@@ -90,3 +90,11 @@ print(pop_spokane)
 #slice across columns with more than one column returns a data frame
 regions_df = pd.read_csv("regions.csv", index_col = 0)
 print(regions_df)
+
+#joining the two tables
+merged_df = pop_df.merge(regions_df, on ="City") #By default this is an inner join
+print(merged_df)
+
+
+#We can write data frames and series' to files
+merged_df.to_csv("merged.csv")
