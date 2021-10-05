@@ -26,3 +26,5 @@ cities = ["Spokane", "Seattle", "Bellevue", "Leavenworth"]
 pop_ser = pd.Series(population, index = cities)
 print(pop_ser)
 print(pop_ser["Seattle"])
+
+
