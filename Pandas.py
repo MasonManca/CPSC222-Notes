@@ -123,4 +123,29 @@ pandas (groupby())
 
 3)combine- combine the apply result into a summary table
 
+
+split on the "class" attribute
+use pandas groupby() to do this
 """
+
+grouped_by_class = merged_df.groupby("Class")
+print(type(grouped_by_class))
+
+mean_pop_ser = pd.Series(dtype = float)
+for group_name,group_df in grouped_by_class:
+    print(group_name)
+    print(group_df)
+    group_pop_ser = group_df["Population"]
+    mean_group_pop = group_pop_ser.mean()
+    print("mean: ", mean_group_pop)
+
+    #3 combine
+    mean_pop_ser[group_name] = mean_group_pop
+    print("****")
+
+    print("result of split-apply-combine on Class")
+    print(mean_pop_ser)
+
+    #shorter way
+    mean_pop_ser = grouped_by_class["Population"].mean()
+    print(mean_pop_ser)
