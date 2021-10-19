@@ -20,3 +20,12 @@ json_obj = json.loads(response.text)
 route_obj = json_obj["route"]
 distance = route_obj["distance"]
 print(distance)
+
+'''
+spotify api parsing
+
+will need client id and client secret
+in U4, copy spotify api and replace client id and client secret
+    should respond with taylor swift
+
+'''
