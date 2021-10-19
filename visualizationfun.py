@@ -27,17 +27,28 @@ we will use the matplotlib library for charting w/python
 
 '''
 
-def line_chart_example(x,y):
-    
+def line_chart_example(x,y, filename):
+    plt.plot(x,y)
+    # 3 main ways
+    # plt.show(): opens a window
+    plt.show()
+    #plt.savefig(filename): saves to a file
+    plt.savefig(filename)
+    # inline with jupyter notebook
+
 
 def main():
     x = list(range(6))
     y = []
+    z = []
 
     for value in x:
         y.append(val**2)
+    for value in x:
+        z.append(val**3)
     print(x)
     print(y)
-    line_chart_example(x, y)
+    #add another y line for x values cubed
+    line_chart_example(x, z, "line_example.png")
 
 main()
